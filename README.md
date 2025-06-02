@@ -4,7 +4,7 @@ Este repositório está dividido em duas partes: documentação e código.
 
 Para visualizar os relatórios dos roteiros e do projeto basta entrar na pasta docs.
 
-O código do projeto está localizado na pasta site.
+O código do projeto está localizado na pasta site/projeto.
 
 
 ## Roteiros
