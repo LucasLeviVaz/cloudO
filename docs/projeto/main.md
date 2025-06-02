@@ -47,6 +47,10 @@ Para executar basta copiar o endpoint público do container criado no Lighsail d
 http://fastapi-service.tkg22yejn0r8w.us-east-2.cs.amazonlightsail.com/docs
 ```
 
+Link do vídeo testando utilizando FastAPI:
+
+https://youtu.be/qDmwYlI38pM
+
 ## Custos
 
 Print dos custos:
