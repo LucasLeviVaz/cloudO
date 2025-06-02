@@ -3,3 +3,7 @@ env/
 .cache/
 .vscode/
 target/
+
+site/
+projeto/
+.env

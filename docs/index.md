@@ -6,20 +6,20 @@
     2025.1
 
 
-## KIT-P
+## KIT-O
 
-João da Silva
+Lucas Levi Vaz
 
-Pedro de Souza
+Luiz Guilherme
 
 
 ## Entregas
 
 - [x] Roteiro 1 - Data 23/02/2025
-- [ ] Roteiro 2
-- [ ] Roteiro 3
-- [ ] Roteiro 4
-- [ ] Projeto
+- [x] Roteiro 2 - Data 15/04/2025
+- [x] Roteiro 3 - Data 01/06/2025
+- [x] Roteiro 4 - Data 01/06/2025
+- [x] Projeto   - Data 01/06/2025
 
 
 ## Referências
