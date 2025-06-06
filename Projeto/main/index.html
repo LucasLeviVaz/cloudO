@@ -10,10 +10,8 @@
         <meta name="author" content="Silva, J.; Souza, P.">
       
       
-        <link rel="canonical" href="https://hsandmann.github.io/insper.cloud.template/projeto/main/">
+        <link rel="canonical" href="https://hsandmann.github.io/insper.cloud.template/Projeto/main/">
       
-      
-        <link rel="prev" href="../../roteiro4/main/">
       
       
       
@@ -22,7 +20,7 @@
     
     
       
-        <title>Projeto - Computação em Nuvem</title>
+        <title>Main - Computação em Nuvem</title>
       
     
     
@@ -129,6 +127,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#objetivo" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -161,7 +164,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Projeto
+              Main
             
           </span>
         </div>
@@ -485,17 +488,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../projeto/main.md" class="md-nav__link">
         
   
   
@@ -506,7 +502,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -529,6 +524,77 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-lightsail" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS Lightsail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-executar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como executar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -546,9 +612,54 @@
   
 
 
-  <h1>Projeto</h1>
+  <h1>Main</h1>
 
+<h2 id="objetivo">Objetivo</h2>
+<p>O objetivo deste projeto é criar uma API RESTful, dockerizá-la e utilizá-la via em nuvem via AWS Lightsail, incluindo a configuração de um banco de dados gerenciado e controle de custos operacionais, visando não estourar o custo mensal da infraestrutura de até US$:50,00</p>
+<h2 id="api">API</h2>
+<p>O primeiro passo foi desenvolver uma API RESTful com funcionalidades de cadastro, autenticação de usuários e consulta de dados protegidos por token JWT. Seu código foi criado utilizando PostgreSQL e testado com FastAPI.</p>
+<p>Print do Dashboard do FastAPI conectado via máquina Nginx/LB:</p>
+<figure>
+<p><a class="glightbox" href="../imagens/fastapi_tunel.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="FastAPI" src="../imagens/fastapi_tunel.png" /></a></p>
+<figcaption>
+<p>FastApi</p>
+</figcaption>
+</figure>
+<p>Após garantir o funcionamento da api, ela foi dockerizada e sua imagem publicada no Docker Hub.</p>
+<h2 id="aws-lightsail">AWS Lightsail</h2>
+<p>No AWS Lightsail, foi criado um novo serviço de container para hospedar a aplicação. No painel da plataforma, foi informado o nome da imagem hospedada no Docker Hub e configurada a porta de entrada como 8080, que é a utilizada pela API. Após o deploy do container, o Lightsail forneceu um endpoint público, que foi copiado e adicionado à documentação como URL principal da API.</p>
+<p>Além disso, foi criado um banco de dados gerenciado do tipo PostgreSQL dentro do Lightsail. Durante a criação, foram definidos nome da instância, nome do banco, usuário e senha. Com o banco disponível, o endpoint público fornecido foi copiado e utilizado na configuração das variáveis de ambiente do container, possibilitando a conexão entre a aplicação e o banco de dados em nuvem. Após essas etapas, a API pôde ser acessada e testada com sucesso pela internet.</p>
+<p>Print do service no Lighsail:</p>
+<figure>
+<p><a class="glightbox" href="../imagens/fast_api.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Lightsail" src="../imagens/fast_api.png" /></a></p>
+<figcaption>
+<p>Lighsail</p>
+</figcaption>
+</figure>
+<h2 id="diagrama">Diagrama</h2>
+<p>Diagrama do projeto:</p>
+<figure>
+<p><a class="glightbox" href="../imagens/diagrama_projeto.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Lightsail" src="../imagens/diagrama_projeto.jpeg" /></a></p>
+<figcaption>
+<p>Lighsail</p>
+</figcaption>
+</figure>
+<h2 id="como-executar">Como executar</h2>
+<p>Para executar basta copiar o endpoint público do container criado no Lighsail da seguinte maneira:</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty>http://fastapi-service.tkg22yejn0r8w.us-east-2.cs.amazonlightsail.com/docs<br></span></div>
 
+<p>Link do vídeo testando utilizando FastAPI:</p>
+<p>https://youtu.be/qDmwYlI38pM</p>
+<h2 id="custos">Custos</h2>
+<p>Print dos custos:</p>
+<figure>
+<p><a class="glightbox" href="../imagens/custos.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Custo" src="../imagens/custos.png" /></a></p>
+<figcaption>
+<p>Custo</p>
+</figcaption>
+</figure>
+<h2 id="conclusao">Conclusão</h2>
+<p>O objetivo do projeto foi alcançado com êxito, uma vez que a API desenvolvida em FastAPI foi corretamente dockerizada e implantada no serviço de containers do Amazon Lightsail, operando com sucesso em ambiente de nuvem. A aplicação demonstrou pleno funcionamento, permitindo cadastro, autenticação e consulta de dados via endpoints documentados no Swagger. Além disso, a infraestrutura foi mantida com um custo inferior a 50 dólares, atendendo aos requisitos de eficiência e viabilidade econômica estabelecidos para o projeto.</p>
 
 
 
